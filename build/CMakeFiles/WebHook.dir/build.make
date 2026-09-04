@@ -56,7 +56,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/gigu/cpp/Discord-Bot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/gigu/cpp/Discord-Bot
+CMAKE_BINARY_DIR = /home/gigu/cpp/Discord-Bot/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/WebHook.dir/depend.make
@@ -70,9 +70,9 @@ include CMakeFiles/WebHook.dir/progress.make
 include CMakeFiles/WebHook.dir/flags.make
 
 CMakeFiles/WebHook.dir/src/send.cpp.o: CMakeFiles/WebHook.dir/flags.make
-CMakeFiles/WebHook.dir/src/send.cpp.o: src/send.cpp
+CMakeFiles/WebHook.dir/src/send.cpp.o: /home/gigu/cpp/Discord-Bot/src/send.cpp
 CMakeFiles/WebHook.dir/src/send.cpp.o: CMakeFiles/WebHook.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/gigu/cpp/Discord-Bot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/WebHook.dir/src/send.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/gigu/cpp/Discord-Bot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/WebHook.dir/src/send.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WebHook.dir/src/send.cpp.o -MF CMakeFiles/WebHook.dir/src/send.cpp.o.d -o CMakeFiles/WebHook.dir/src/send.cpp.o -c /home/gigu/cpp/Discord-Bot/src/send.cpp
 
 CMakeFiles/WebHook.dir/src/send.cpp.i: cmake_force
@@ -93,7 +93,7 @@ WebHook_EXTERNAL_OBJECTS =
 libWebHook.a: CMakeFiles/WebHook.dir/src/send.cpp.o
 libWebHook.a: CMakeFiles/WebHook.dir/build.make
 libWebHook.a: CMakeFiles/WebHook.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/gigu/cpp/Discord-Bot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libWebHook.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/gigu/cpp/Discord-Bot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libWebHook.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/WebHook.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/WebHook.dir/link.txt --verbose=$(VERBOSE)
 
@@ -106,6 +106,6 @@ CMakeFiles/WebHook.dir/clean:
 .PHONY : CMakeFiles/WebHook.dir/clean
 
 CMakeFiles/WebHook.dir/depend:
-	cd /home/gigu/cpp/Discord-Bot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/gigu/cpp/Discord-Bot /home/gigu/cpp/Discord-Bot /home/gigu/cpp/Discord-Bot /home/gigu/cpp/Discord-Bot /home/gigu/cpp/Discord-Bot/CMakeFiles/WebHook.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/gigu/cpp/Discord-Bot/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/gigu/cpp/Discord-Bot /home/gigu/cpp/Discord-Bot /home/gigu/cpp/Discord-Bot/build /home/gigu/cpp/Discord-Bot/build /home/gigu/cpp/Discord-Bot/build/CMakeFiles/WebHook.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/WebHook.dir/depend
 

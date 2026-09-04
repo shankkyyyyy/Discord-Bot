@@ -155,9 +155,9 @@ CMakeFiles/WebHook.dir/src/send.cpp.o: \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/sstream \
  /usr/include/c++/13/bits/sstream.tcc \
  /home/gigu/cpp/Discord-Bot/src/../include/send.h \
- /home/gigu/cpp/Discord-Bot/src/../include/curl/curl.h \
- /home/gigu/cpp/Discord-Bot/src/../include/curl/curlver.h \
- /home/gigu/cpp/Discord-Bot/src/../include/curl/system.h \
+ /home/gigu/cpp/Discord-Bot/src/../include/../include/curl/curl.h \
+ /home/gigu/cpp/Discord-Bot/src/../include/../include/curl/curlver.h \
+ /home/gigu/cpp/Discord-Bot/src/../include/../include/curl/system.h \
  /usr/include/x86_64-linux-gnu/sys/socket.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
  /usr/include/x86_64-linux-gnu/bits/socket.h \
@@ -183,12 +183,14 @@ CMakeFiles/WebHook.dir/src/send.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
  /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
  /usr/include/x86_64-linux-gnu/sys/time.h \
- /home/gigu/cpp/Discord-Bot/src/../include/curl/easy.h \
- /home/gigu/cpp/Discord-Bot/src/../include/curl/multi.h \
+ /home/gigu/cpp/Discord-Bot/src/../include/../include/curl/easy.h \
+ /home/gigu/cpp/Discord-Bot/src/../include/../include/curl/multi.h \
+ /home/gigu/cpp/Discord-Bot/src/../include/../include/curl/curl.h \
+ /home/gigu/cpp/Discord-Bot/src/../include/../include/curl/urlapi.h \
+ /home/gigu/cpp/Discord-Bot/src/../include/../include/curl/options.h \
+ /home/gigu/cpp/Discord-Bot/src/../include/../include/curl/header.h \
+ /home/gigu/cpp/Discord-Bot/src/../include/../include/curl/websockets.h \
+ /home/gigu/cpp/Discord-Bot/src/../include/../include/curl/mprintf.h \
+ /home/gigu/cpp/Discord-Bot/src/../include/../include/curl/easy.h \
  /home/gigu/cpp/Discord-Bot/src/../include/curl/curl.h \
- /home/gigu/cpp/Discord-Bot/src/../include/curl/urlapi.h \
- /home/gigu/cpp/Discord-Bot/src/../include/curl/options.h \
- /home/gigu/cpp/Discord-Bot/src/../include/curl/header.h \
- /home/gigu/cpp/Discord-Bot/src/../include/curl/websockets.h \
- /home/gigu/cpp/Discord-Bot/src/../include/curl/mprintf.h \
  /home/gigu/cpp/Discord-Bot/src/../include/curl/easy.h

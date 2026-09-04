@@ -57,7 +57,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/gigu/cpp/Discord-Bot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/gigu/cpp/Discord-Bot
+CMAKE_BINARY_DIR = /home/gigu/cpp/Discord-Bot/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -81,14 +81,14 @@ clean: CMakeFiles/WebHook.dir/clean
 CMakeFiles/WebHook.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/WebHook.dir/build.make CMakeFiles/WebHook.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/WebHook.dir/build.make CMakeFiles/WebHook.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gigu/cpp/Discord-Bot/CMakeFiles --progress-num=1,2 "Built target WebHook"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gigu/cpp/Discord-Bot/build/CMakeFiles --progress-num=1,2 "Built target WebHook"
 .PHONY : CMakeFiles/WebHook.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/WebHook.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gigu/cpp/Discord-Bot/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gigu/cpp/Discord-Bot/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/WebHook.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gigu/cpp/Discord-Bot/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gigu/cpp/Discord-Bot/build/CMakeFiles 0
 .PHONY : CMakeFiles/WebHook.dir/rule
 
 # Convenience name for target.
