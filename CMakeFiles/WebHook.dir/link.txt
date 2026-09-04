@@ -1,0 +1,2 @@
+/usr/bin/ar qc libWebHook.a CMakeFiles/WebHook.dir/src/send.cpp.o
+/usr/bin/ranlib libWebHook.a

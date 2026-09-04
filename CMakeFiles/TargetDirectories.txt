@@ -1,0 +1,3 @@
+/home/gigu/cpp/Discord-Bot/CMakeFiles/WebHook.dir
+/home/gigu/cpp/Discord-Bot/CMakeFiles/edit_cache.dir
+/home/gigu/cpp/Discord-Bot/CMakeFiles/rebuild_cache.dir
