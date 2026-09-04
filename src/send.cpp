@@ -23,41 +23,9 @@
 // F YOU, IF YOU DO VIBE CODING           |
 //----------------------------------------|
 
-struct MsgDetails
-{
-  /*
-    NOTE: 
-      -Curl Pointer is constructed in the webhook class 
-      -WEBHOOK_URL is also constructed in the webhook class
-      -Other than these two Objects Other Objects and variables 
-      -Are in this Struct 
-  */
-  const std::string* Message = nullptr; 
-  
-  const std::string* FilePath = nullptr; 
 
-  const std::string* FileMsg = nullptr; 
-  
-  const std::string* MsgId = nullptr; 
 
-  bool IsEmbed = 0; 
-};
 
-class WebHook {
-private:
-  // -Used For Discord Webhook, Used in functions: sendMessage
-  std::string URL_WEBHOOK;
-
-  // -Used For Sending Message To Discord Using easyopt
-  CURL *curlptr;
-
-  // -Used For: Checking if the 'curlptr' is given or not
-  // -If not given, In deconstructor it is cleaned up and set to nullptr
-  bool IsPtrProvided = false;
-  bool IsMimeUsed = false; 
-  curl_mime* MIME = nullptr; 
-
-public:
   /*
       ;@ Constructors
       -With And Without CURL Pointer Object
@@ -69,7 +37,7 @@ public:
      Object. -Best For Latency And Raw Speed. -Does Not Clean The Curl Object.
       -Cleans The Header Object Only.
   */
-  WebHook(std::string &URL_WEBHOOK, CURL *curlptr)
+  WebHook::WebHook(std::string &URL_WEBHOOK, CURL *curlptr)
       : URL_WEBHOOK(URL_WEBHOOK), curlptr(curlptr), IsPtrProvided(true) {}
 
   /*
@@ -77,7 +45,7 @@ public:
      Discord. -Creates New Curl Pointer Object. -Both Header And Curl Object Are
      Cleared In The Functions.
   */
-  WebHook(std::string &URL_WEBHOOK) : URL_WEBHOOK(URL_WEBHOOK), curlptr(nullptr) {}
+  WebHook::WebHook(std::string &URL_WEBHOOK) : URL_WEBHOOK(URL_WEBHOOK), curlptr(nullptr) {}
 
   
   /*
@@ -85,7 +53,7 @@ public:
     -Changes The Webhook.
     -Rvalue Reference type.
   */
-  void changeWebhook(const std::string& Webhook) noexcept
+  void WebHook::changeWebhook(const std::string& Webhook) noexcept
   {
     this->URL_WEBHOOK = Webhook; 
     std::cout << "Webhook Changed To " << Webhook << std::endl; 
@@ -97,7 +65,7 @@ public:
       -CAUTION: THIS FUNCTION DOES NOT CLEANUP THE  CURL POINTER OBJECT
       -THE CURL POINTER OBJECT IS CLEANED AT THE DESTRUCTOR
   */
-  int sendMessage(MsgDetails* MsgProc) {
+  int WebHook::sendMessage(MsgDetails* MsgProc) {
     // exception handling
     try {
       if (this->curlptr == nullptr) {
@@ -155,7 +123,7 @@ public:
         }
         // free's the headers
         curl_slist_free_all(headers);
-        return ;
+        return 1;
       } else {
         throw std::runtime_error("Cannot Initialize Curl Object");
       }
@@ -169,7 +137,7 @@ public:
         -The function is used for sending File's to the specified channel 
         -The FileMsg variable can be Null, the variable is used for Sending Custom Message To the file Sented
     */
-  int sendFile(const MsgDetails* MsgProc)
+  int WebHook::sendFile(const MsgDetails* MsgProc)
   { // 156 - 214 
         if(this->curlptr == nullptr)
         {
@@ -221,7 +189,7 @@ public:
     return 0;
   } // 214 
    // destructor
-  ~WebHook() {
+  WebHook::~WebHook() {
     if (IsPtrProvided == false && this->curlptr != nullptr) {
       curl_easy_cleanup(this->curlptr);
       this->curlptr = nullptr;
@@ -232,5 +200,5 @@ public:
         this->MIME = nullptr;
     }
   }
-};
+
 

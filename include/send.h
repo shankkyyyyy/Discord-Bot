@@ -31,13 +31,12 @@ private:
   curl_mime *MIME = nullptr;
 
 public:
-   WebHook(std::string &URL_WEBHOOK, CURL *curlptr)
-      : URL_WEBHOOK(URL_WEBHOOK), curlptr(curlptr), IsPtrProvided(true) {}
+   WebHook(std::string &URL_WEBHOOK, CURL *curlptr); 
 
-  WebHook(std::string &URL_WEBHOOK) : URL_WEBHOOK(URL_WEBHOOK), curlptr(nullptr) {}
+  WebHook(std::string &URL_WEBHOOK); 
 
   
-  void changeWebhook(const std::string& Webhook);
+  void changeWebhook(const std::string& Webhook) noexcept;
    int sendMessage(MsgDetails* MsgProc); 
    int sendFile(const MsgDetails* MsgProc);
   ~WebHook();
