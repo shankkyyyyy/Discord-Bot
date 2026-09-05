@@ -1,19 +1,29 @@
 #include <iostream>
 #include "../include/send.h"
 
+// this project is made by shankkkyyy
+// this code need's heavy refacotring because this is written by a 16 year old 
+// this code is not good for concurrency other things
+// this is just a project to learn about libcurl 
+
+
+/*
+    EXAMPLE CODE:
+    1, Replace strings with your WebHook,Message,Filepath 
+    and see the magic
+
+*/
+
 int main()
 {
     MsgDetails Msg1;
-    std::string Hook = "https://discord.com/api/webhooks/1542139799455014992/gfbcDsJ5bE06JlfvMUEHeILe58CNoOcUX-ti4rRFcn7Y1-bJLPm_Qs81bm-d_FHjU6iu";
+    std::string Hook = "Your Discord WebHook"; 
     WebHook Send(Hook,&Msg1);
-    std::string h = "Hello, World!"; 
+    std::string h = "Your Message"; 
     std::string* msg = &h; 
     Msg1.SetMessage(msg);
     Send.sendMessage();
-    *msg = "Does this work ?";
-    Msg1.SetMessage(msg);  
-    Send.sendMessage();
-    std::string f = "/home/gigu/Photos/spam._maa_1774032281_3857184650632675036_78539813285.heic";  
+    std::string f = "/File/Path/To/Your/File";  
     Msg1.FilePath = &f; 
     Send.sendFile(); 
     return 0; 
