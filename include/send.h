@@ -19,7 +19,10 @@ struct MsgDetails {
 
   const std::string *MsgId = nullptr;
 
+  const WebHook
   bool IsEmbed = 0;
+
+
 };
 
 class WebHook {
@@ -31,13 +34,14 @@ private:
   curl_mime *MIME = nullptr;
 
 public:
-   WebHook(std::string &URL_WEBHOOK, CURL *curlptr); 
 
+  //constructor
+  WebHook(std::string &URL_WEBHOOK, CURL *curlptr); 
   WebHook(std::string &URL_WEBHOOK); 
 
-  
-  void changeWebhook(const std::string& Webhook) noexcept;
-   int sendMessage(MsgDetails* MsgProc); 
-   int sendFile(const MsgDetails* MsgProc);
+  //methods
+  void geWebhook(const std::string& Webhook) noexcept;
+  int sendMessage(MsgDetails* MsgProc); 
+  int sendFile(const MsgDetails* MsgProc);
   ~WebHook();
 };

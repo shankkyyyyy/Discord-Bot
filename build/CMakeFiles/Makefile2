@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /home/gigu/cpp/Discord-Bot/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/WebHook.dir/all
+all: CMakeFiles/Send.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/WebHook.dir/clean
+clean: CMakeFiles/Send.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/WebHook.dir
+# Target rules for target CMakeFiles/Send.dir
 
 # All Build rule for target.
-CMakeFiles/WebHook.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/WebHook.dir/build.make CMakeFiles/WebHook.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/WebHook.dir/build.make CMakeFiles/WebHook.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gigu/cpp/Discord-Bot/build/CMakeFiles --progress-num=1,2 "Built target WebHook"
-.PHONY : CMakeFiles/WebHook.dir/all
+CMakeFiles/Send.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Send.dir/build.make CMakeFiles/Send.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Send.dir/build.make CMakeFiles/Send.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gigu/cpp/Discord-Bot/build/CMakeFiles --progress-num=1,2 "Built target Send"
+.PHONY : CMakeFiles/Send.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/WebHook.dir/rule: cmake_check_build_system
+CMakeFiles/Send.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gigu/cpp/Discord-Bot/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/WebHook.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Send.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gigu/cpp/Discord-Bot/build/CMakeFiles 0
-.PHONY : CMakeFiles/WebHook.dir/rule
+.PHONY : CMakeFiles/Send.dir/rule
 
 # Convenience name for target.
-WebHook: CMakeFiles/WebHook.dir/rule
-.PHONY : WebHook
+Send: CMakeFiles/Send.dir/rule
+.PHONY : Send
 
 # clean rule for target.
-CMakeFiles/WebHook.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/WebHook.dir/build.make CMakeFiles/WebHook.dir/clean
-.PHONY : CMakeFiles/WebHook.dir/clean
+CMakeFiles/Send.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Send.dir/build.make CMakeFiles/Send.dir/clean
+.PHONY : CMakeFiles/Send.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

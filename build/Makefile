@@ -117,41 +117,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named WebHook
+# Target rules for targets named Send
 
 # Build rule for target.
-WebHook: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 WebHook
-.PHONY : WebHook
+Send: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Send
+.PHONY : Send
 
 # fast build rule for target.
-WebHook/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/WebHook.dir/build.make CMakeFiles/WebHook.dir/build
-.PHONY : WebHook/fast
+Send/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Send.dir/build.make CMakeFiles/Send.dir/build
+.PHONY : Send/fast
 
-src/send.o: src/send.cpp.o
-.PHONY : src/send.o
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
 
 # target to build an object file
-src/send.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/WebHook.dir/build.make CMakeFiles/WebHook.dir/src/send.cpp.o
-.PHONY : src/send.cpp.o
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Send.dir/build.make CMakeFiles/Send.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-src/send.i: src/send.cpp.i
-.PHONY : src/send.i
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-src/send.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/WebHook.dir/build.make CMakeFiles/WebHook.dir/src/send.cpp.i
-.PHONY : src/send.cpp.i
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Send.dir/build.make CMakeFiles/Send.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-src/send.s: src/send.cpp.s
-.PHONY : src/send.s
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-src/send.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/WebHook.dir/build.make CMakeFiles/WebHook.dir/src/send.cpp.s
-.PHONY : src/send.cpp.s
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Send.dir/build.make CMakeFiles/Send.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -161,10 +161,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... WebHook"
-	@echo "... src/send.o"
-	@echo "... src/send.i"
-	@echo "... src/send.s"
+	@echo "... Send"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

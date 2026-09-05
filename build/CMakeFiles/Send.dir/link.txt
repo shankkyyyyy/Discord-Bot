@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/Send.dir/src/main.cpp.o -o Send  /home/gigu/cpp/Discord-Bot/libWebHook.a -lcurl 
