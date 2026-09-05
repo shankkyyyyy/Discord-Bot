@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Send.dir/src/main.cpp.o"
   "CMakeFiles/Send.dir/src/main.cpp.o.d"
+  "CMakeFiles/Send.dir/src/send.cpp.o"
+  "CMakeFiles/Send.dir/src/send.cpp.o.d"
   "Send"
   "Send.pdb"
 )

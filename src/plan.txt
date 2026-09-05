@@ -1,5 +1,0 @@
-/
-
-    // setup a curl init outside the loop; 
-    // clean up the curl init below the loop; 
-/

@@ -1,20 +1,6 @@
-#include <iostream>
-#include <stdexcept>
-#include <string>
-#include <vector>
-#include <sstream>
-
 #include "../include/send.h"
-#include "../include/curl/curl.h"
-#include "../include/curl/easy.h"
-
 
     
-// UPDATE
-// ONLY GOD KNOWS HOW THIS WORKS 
-// after 1 week without writing this 
-// file, idk how tf this works anymore 
-
 //----------------------------------------|
 // NON AI PROJECT                         |
 // DONE BY REAL HUMAN BEING               |
@@ -25,6 +11,18 @@
 
 
 
+// struct MsgDetials methods
+
+
+// Set's message to the scope of the variable; 
+// don't give parameter an rvalue leads to unexpected errors  
+  void MsgDetails::SetMessage(std::string* msg)
+  {
+    std::cout << &msg << std::endl; 
+    this->Message = nullptr;
+    this->Message = msg;
+    return; 
+  }
 
   /*
       ;@ Constructors
@@ -37,17 +35,16 @@
      Object. -Best For Latency And Raw Speed. -Does Not Clean The Curl Object.
       -Cleans The Header Object Only.
   */
-  WebHook::WebHook(std::string &URL_WEBHOOK, CURL *curlptr)
-      : URL_WEBHOOK(URL_WEBHOOK), curlptr(curlptr), IsPtrProvided(true) {}
+  WebHook::WebHook(std::string &URL_WEBHOOK, CURL *curlptr,MsgDetails* Msg)
+      : URL_WEBHOOK(URL_WEBHOOK), curlptr(curlptr), IsPtrProvided(true), Msg(Msg) {}
 
   /*
       -This Constructor Is Used When The Developer Needs a Clean Request To
      Discord. -Creates New Curl Pointer Object. -Both Header And Curl Object Are
      Cleared In The Functions.
   */
-  WebHook::WebHook(std::string &URL_WEBHOOK) : URL_WEBHOOK(URL_WEBHOOK), curlptr(nullptr) {}
+  WebHook::WebHook(std::string &URL_WEBHOOK,MsgDetails* Msg) : URL_WEBHOOK(URL_WEBHOOK), curlptr(nullptr), Msg(Msg) {}
 
-  
   /*
     -Setter Function.
     -Changes The Webhook.
@@ -65,7 +62,7 @@
       -CAUTION: THIS FUNCTION DOES NOT CLEANUP THE  CURL POINTER OBJECT
       -THE CURL POINTER OBJECT IS CLEANED AT THE DESTRUCTOR
   */
-  int WebHook::sendMessage(MsgDetails* MsgProc) {
+  int WebHook::sendMessage() {
     // exception handling
     try {
       if (this->curlptr == nullptr) {
@@ -95,23 +92,26 @@
         // for json_data for sending the json formated message to discord
         
         std::string json_data; 
-
         // code explains 
-        if(!MsgProc->IsEmbed)
+        if(!Msg->IsEmbed)
         {
-          // for combing the content and MsgProc->Message 
-          std::ostringstream ss; 
-          ss << R"({"content": ")" << *MsgProc->Message << R"("})";
+          // for combing the content and Msg->Message 
+          std::ostringstream ss;
+          ss << R"({"content": ")" << *Msg->Message << R"("})";
           // the ss makes it into the string 
+          
           json_data = ss.str(); 
         }
         else
         {
           // the embed message is directly into the postfields
           // WARNING: THE EMBED MESSAGE SHOULD BE FORMATED 
-          curl_easy_setopt(curlptr, CURLOPT_POSTFIELDS, MsgProc->Message->data());
+          curl_easy_setopt(curlptr, CURLOPT_POSTFIELDS, Msg->Message->data());
         }
-        
+        // the problem is that json data variable does not have anything inside it ? 
+        // what is the problem with this code ?? 
+        // let me check this code out 
+        std::cout << json_data << std::endl;    
         curl_easy_setopt(curlptr,CURLOPT_POSTFIELDS,json_data.data()); 
         CURLcode res = curl_easy_perform(curlptr);
         
@@ -137,7 +137,7 @@
         -The function is used for sending File's to the specified channel 
         -The FileMsg variable can be Null, the variable is used for Sending Custom Message To the file Sented
     */
-  int WebHook::sendFile(const MsgDetails* MsgProc)
+  int WebHook::sendFile()
   { // 156 - 214 
         if(this->curlptr == nullptr)
         {
@@ -161,17 +161,17 @@
         }
         this->MIME = Mime; 
         std::string json_data; 
-        if(MsgProc->FileMsg != nullptr)
+        if(Msg->FileMsg != nullptr)
         {
             std::ostringstream ss; 
-            ss << R"({"content": ")" << *MsgProc->FileMsg << R"("})";
+            ss << R"({"content": ")" << *Msg->FileMsg << R"("})";
             Part = curl_mime_addpart(Mime);
             curl_mime_name(Part,"payload_json"); 
             curl_mime_data(Part,json_data.data(),CURL_ZERO_TERMINATED); 
         }
         Part = curl_mime_addpart(Mime); 
         curl_mime_name(Part,"file"); 
-        curl_mime_filedata(Part,MsgProc->FilePath->data()); 
+        curl_mime_filedata(Part,Msg->FilePath->data()); 
         curl_easy_setopt(curlptr,CURLOPT_URL,URL_WEBHOOK.c_str());
         curl_easy_setopt(curlptr,CURLOPT_MIMEPOST,Mime);
         CURLcode res = curl_easy_perform(curlptr); 
@@ -193,7 +193,7 @@
     if (IsPtrProvided == false && this->curlptr != nullptr) {
       curl_easy_cleanup(this->curlptr);
       this->curlptr = nullptr;
-    }
+    }    
     if(this->MIME != nullptr)
     {
         curl_mime_free(this->MIME);

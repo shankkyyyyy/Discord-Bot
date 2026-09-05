@@ -10,8 +10,12 @@
 #include "../include/curl/easy.h"
 
  
+// THIS STURCT IN THE VERSION 0.1 IS USELESS
+// BETTER TO USE CLASS METHODS ONLY 
+// this struct is usefull in the case for getting message id, used for deleting and updating message's
+// via webhook 
 struct MsgDetails {
-  const std::string *Message = nullptr;
+   std::string *Message = nullptr;
 
   const std::string *FilePath = nullptr;
 
@@ -19,29 +23,39 @@ struct MsgDetails {
 
   const std::string *MsgId = nullptr;
 
-  const WebHook
   bool IsEmbed = 0;
 
+  // methods 
 
+  // function for setting the variable Message 
+  // testing stage
+  // making a new unit case for this 
+  void SetMessage(std::string *msg); 
 };
 
 class WebHook {
 private:
-  std::string URL_WEBHOOK;
-  CURL *curlptr;
+  std::string URL_WEBHOOK = nullptr;
+  
+  CURL *curlptr = nullptr;
+  
+  MsgDetails *Msg = nullptr; 
+  
   bool IsPtrProvided = false;
+  
   bool IsMimeUsed = false;
+  
   curl_mime *MIME = nullptr;
 
 public:
 
   //constructor
-  WebHook(std::string &URL_WEBHOOK, CURL *curlptr); 
-  WebHook(std::string &URL_WEBHOOK); 
+  WebHook(std::string &URL_WEBHOOK, CURL *curlptr,MsgDetails* Msg); 
+  WebHook(std::string &URL_WEBHOOK,MsgDetails* Msg); 
 
   //methods
-  void geWebhook(const std::string& Webhook) noexcept;
-  int sendMessage(MsgDetails* MsgProc); 
-  int sendFile(const MsgDetails* MsgProc);
+  void changeWebhook(const std::string& Webhook) noexcept;
+  int sendMessage(); 
+  int sendFile();
   ~WebHook();
 };

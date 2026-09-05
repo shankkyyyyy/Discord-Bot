@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/gigu/cpp/Discord-Bot/src/main.cpp" "CMakeFiles/Send.dir/src/main.cpp.o" "gcc" "CMakeFiles/Send.dir/src/main.cpp.o.d"
+  "/home/gigu/cpp/Discord-Bot/src/send.cpp" "CMakeFiles/Send.dir/src/send.cpp.o" "gcc" "CMakeFiles/Send.dir/src/send.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

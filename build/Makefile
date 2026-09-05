@@ -153,6 +153,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Send.dir/build.make CMakeFiles/Send.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/send.o: src/send.cpp.o
+.PHONY : src/send.o
+
+# target to build an object file
+src/send.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Send.dir/build.make CMakeFiles/Send.dir/src/send.cpp.o
+.PHONY : src/send.cpp.o
+
+src/send.i: src/send.cpp.i
+.PHONY : src/send.i
+
+# target to preprocess a source file
+src/send.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Send.dir/build.make CMakeFiles/Send.dir/src/send.cpp.i
+.PHONY : src/send.cpp.i
+
+src/send.s: src/send.cpp.s
+.PHONY : src/send.s
+
+# target to generate assembly for a file
+src/send.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Send.dir/build.make CMakeFiles/Send.dir/src/send.cpp.s
+.PHONY : src/send.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -165,6 +189,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/send.o"
+	@echo "... src/send.i"
+	@echo "... src/send.s"
 .PHONY : help
 
 
